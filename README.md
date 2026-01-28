@@ -10,6 +10,7 @@ A modern, animated personal portfolio website built with Next.js, TypeScript, Ta
 - **TypeScript**: Type-safe development with full TypeScript support
 - **Optimized Performance**: Built with Next.js App Router for optimal performance
 - **SEO Friendly**: Proper meta tags and semantic HTML structure
+- **GitHub Pages Ready**: Configured for automatic deployment to GitHub Pages
 
 ## 🛠️ Tech Stack
 
@@ -18,7 +19,7 @@ A modern, animated personal portfolio website built with Next.js, TypeScript, Ta
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Deployment**: Ready for Vercel
+- **Deployment**: GitHub Pages with GitHub Actions
 
 ## 📁 Project Structure
 
@@ -38,6 +39,9 @@ src/
 │   ├── SelectedWork.tsx
 │   └── Writing.tsx
 └── ...
+.github/
+└── workflows/
+    └── deploy.yml
 ```
 
 ## 🎨 Sections
@@ -65,6 +69,8 @@ src/
 
 ## 📦 Build & Deploy
 
+### Local Development
+
 1. **Build for production**:
    ```bash
    npm run build
@@ -75,10 +81,39 @@ src/
    npm start
    ```
 
-3. **Deploy to Vercel**:
+### GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+#### Automatic Deployment (Recommended)
+
+1. **Fork this repository** to your GitHub account
+2. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Under "Build and deployment", select "GitHub Actions" as the source
+3. **Push changes** to the main branch - the site will automatically deploy
+
+#### Manual Deployment
+
+1. **Install gh-pages** (if not already installed):
    ```bash
-   vercel --prod
+   npm install --save-dev gh-pages
    ```
+
+2. **Build and deploy**:
+   ```bash
+   npm run deploy
+   ```
+
+#### Deployment Configuration
+
+The deployment is configured in:
+- `next.config.js` - Static export configuration
+- `.github/workflows/deploy.yml` - GitHub Actions workflow
+- `package.json` - Deployment scripts
+
+**Note**: Update the repository URL in `package.json` deploy script to match your GitHub repository.
 
 ## 🎯 Customization
 
@@ -132,7 +167,7 @@ theme: {
 - Next.js App Router for optimal loading
 - Framer Motion for hardware-accelerated animations
 - Optimized images and assets
-- Minimal bundle size
+- Static export for GitHub Pages
 
 ## 📱 Browser Support
 
@@ -151,9 +186,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email**: wisdom.femi.kayode@example.com
-- **GitHub**: https://github.com/wisdomfemikayode
-- **LinkedIn**: https://linkedin.com/in/wisdomfemikayode
+- **Email**: wisewisdom832@gmail.com
+- **GitHub**: https://github.com/Wisdom-Kayode
+- **LinkedIn**: https://www.linkedin.com/in/wisdom-femi-kayode-57bbb1380/
+
+## 🌐 Live Demo
+
+View the live portfolio at: https://wisdom-kayode.github.io/wisdom-portfolio/
 
 ---
 
