@@ -1,13 +1,34 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Heart } from 'lucide-react'
+import { Github, Linkedin, Mail, Heart, Instagram } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState(2024)
+
+  useEffect(() => {
+    // Function to get current year from system date
+    const getCurrentYear = () => {
+      const now = new Date()
+      return now.getFullYear()
+    }
+
+    // Set the year when component mounts
+    setCurrentYear(getCurrentYear())
+
+    // Optional: Update year every minute to handle edge cases
+    const interval = setInterval(() => {
+      setCurrentYear(getCurrentYear())
+    }, 60000) // Check every minute
+
+    return () => clearInterval(interval)
+  }, [])
+
   const socialLinks = [
     { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Wisdom-Kayode' },
     { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/wisdom-femi-kayode-57bbb1380/' },
-    { icon: <Mail className="w-5 h-5" />, href: 'mailto:wisewisdom832@gmail.com' }
+    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/vdark_kay?igsh=MW95aWYwdjdrMDJtMA%3D%3D&utm_source=qr' }
   ]
 
   return (
@@ -60,7 +81,7 @@ export default function Footer() {
           className="border-t border-neutral-800 mt-8 pt-8 text-center"
         >
           <p className="text-neutral-500 text-sm flex items-center justify-center gap-2">
-            © 2024 Wisdom Femi Kayode. Built with 
+            © {currentYear} Wisdom Femi Kayode. Built with 
             <Heart className="w-4 h-4 text-red-500" fill="currentColor" />
             and lots of coffee.
           </p>

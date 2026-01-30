@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Users, Cpu, MessageSquare } from 'lucide-react'
+import { ExternalLink, Github, Users, Cpu, MessageSquare, BookOpen, Building } from 'lucide-react'
 import Image from 'next/image'
 
 const projects = [
@@ -12,6 +12,43 @@ const projects = [
     tech: ['Community Management', 'Mentorship', 'Academic Support', 'Student Development'],
     icon: <Cpu className="w-6 h-6" />,
     image: '/images/QuestionBank.jfif',
+    links: {
+      demo: '#',
+      github: '#'
+    }
+  },
+  {
+    title: 'Digital Public Goods Initiative',
+    role: 'Key Advocate & Workshop Facilitator — University Partnership',
+    description: 'Leading advocate for Digital Public Goods (DPG) awareness and adoption through strategic university partnerships. Collaborated with government to organize and facilitate comprehensive workshops for university students, focusing on digital transformation, open-source solutions, and sustainable technology infrastructure. Played a pivotal role in bridging the gap between academic learning and real-world digital solutions, empowering the next generation of tech leaders with knowledge about inclusive and accessible technology for national development.',
+    tech: ['Digital Advocacy', 'University Partnership', 'Workshop Facilitation', 'Student Development'],
+    icon: <MessageSquare className="w-6 h-6" />,
+    image: '/images/DPG.jpg',
+    links: {
+      demo: '#',
+      github: '#'
+    }
+  },
+  {
+    title: 'TechInspire SL Leadership',
+    role: 'Community Leader & Developer — Tech Organization',
+    description: 'Active leader and developer at TechInspire SL, a pioneering technology organization dedicated to introducing technology to secondary school students, particularly in provincial areas of Sierra Leone. Contributing to community building, technical mentorship, and the development of educational tools and platforms like UniGuide to achieve organizational goals. Playing a key role in organizing school outreaches, workshops, computer classes, and creating tech opportunities for young students to discover and excel in technology.',
+    tech: ['Community Leadership', 'Technical Mentorship', 'School Outreach', 'Educational Tools'],
+    icon: <Building className="w-6 h-6" />,
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&auto=format&q=80',
+    links: {
+      demo: '#',
+      github: '#',
+      company: 'https://www.linkedin.com/company/tech-inspire-sl/?originalSubdomain=sl'
+    }
+  },
+  {
+    title: 'Medium Writing & Thought Leadership',
+    role: 'Writer & Content Creator — Digital Publication',
+    description: 'Regular contributor on Medium, sharing insights on technology, personal development, work-life balance, and digital innovation. Writing articles that explore the intersection of technology and human experience, including topics like "Why Can\'t I Have Both?" (work-life balance) and "Ideas Are Not Rare. Implementation Is." (execution over ideation). Building a community of readers through thoughtful, actionable content that inspires and educates.',
+    tech: ['Technical Writing', 'Content Strategy', 'Digital Publishing', 'Thought Leadership'],
+    icon: <BookOpen className="w-6 h-6" />,
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop&auto=format&q=80',
     links: {
       demo: '#',
       github: '#'
@@ -32,7 +69,7 @@ const projects = [
   {
     title: 'TreeventX',
     role: 'Developer & Head of Communications — TreeventX Platform',
-    description: 'An event management platform built primarily for Sierra Leone, designed as an all-in-one tools suite for creating, managing, promoting, and executing events digitally. Features include event creation & management, ticketing system with QR code generation, real-time data sync, AI-powered event promotions, and transparent pricing model. The platform offers a free forever plan for up to a set number of free events and is powered by Tech Inspire SL, bridging technology with local community engagement.',
+    description: 'An independent event management platform built primarily for Sierra Leone, designed as an all-in-one tools suite for creating, managing, promoting, and executing events digitally. Features include event creation & management, ticketing system with QR code generation, real-time data sync, AI-powered event promotions, and transparent pricing model. The platform offers a free forever plan for up to a set number of free events, bridging technology with local community engagement as a standalone solution.',
     tech: ['Next.js', 'TypeScript', 'AI Integration', 'Ticketing System'],
     icon: <MessageSquare className="w-6 h-6" />,
     image: '/images/Code & Coffee.jfif',
@@ -118,6 +155,48 @@ export default function SelectedWork() {
                         {tech}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    {project.links.demo && project.links.demo !== '#' && (
+                      <motion.a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </motion.a>
+                    )}
+                    {project.links.github && project.links.github !== '#' && (
+                      <motion.a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center px-4 py-2 bg-neutral-700 text-white text-sm font-medium rounded-lg hover:bg-neutral-600 transition-colors"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </motion.a>
+                    )}
+                    {project.links.company && (
+                      <motion.a
+                        href={project.links.company}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center px-4 py-2 bg-neutral-700 text-white text-sm font-medium rounded-lg hover:bg-neutral-600 transition-colors"
+                      >
+                        <Building className="w-4 h-4 mr-2" />
+                        Company
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </div>

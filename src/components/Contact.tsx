@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, Send, MapPin } from 'lucide-react'
+import { Mail, Github, Linkedin, Send, MapPin, Instagram } from 'lucide-react'
 
 const contactInfo = [
   {
-    icon: <Mail className="w-6 h-6" />,
-    label: 'Email',
-    value: 'wisewisdom832@gmail.com',
-    href: 'mailto:wisewisdom832@gmail.com'
+    icon: <Instagram className="w-6 h-6" />,
+    label: 'Instagram',
+    value: 'instagram.com/vdark_kay',
+    href: 'https://www.instagram.com/vdark_kay?igsh=MW95aWYwdjdrMDJtMA%3D%3D&utm_source=qr'
   },
   {
     icon: <Github className="w-6 h-6" />,
