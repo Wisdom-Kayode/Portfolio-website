@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-neutral-950 text-neutral-100">
       <Hero />
       <SelectedWork />
       <Leadership />

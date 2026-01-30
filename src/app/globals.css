@@ -9,8 +9,23 @@
     scroll-behavior: smooth;
   }
   
-  body {
+  html, body {
     @apply bg-neutral-950 text-neutral-100;
+    min-height: 100vh;
+  }
+  
+  * {
+    @apply border-neutral-800;
+  }
+  
+  /* Force dark theme for static export */
+  :root {
+    color-scheme: dark;
+  }
+  
+  /* Ensure all sections have dark background */
+  section {
+    @apply bg-neutral-950;
   }
 }
 
